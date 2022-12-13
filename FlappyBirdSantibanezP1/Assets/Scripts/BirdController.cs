@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BirdController : MonoBehaviour
-
+{
 
     public float upForce = 200f;
     private bool isDead = false;
-    private Rigidboddy2D rigidbody2d;
-{
+    private Rigidbody2D rb2d;
+
+    private Animator anim;
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,12 +23,16 @@ public class BirdController : MonoBehaviour
     {
         if (isDead == false)
         {
-            if (input.GetMouseButtonDown (0))
+            if (Input.GetMouseButtonDown (0))
             {
-                rigidbody2d.velocity = Vector2.zero;
-                rigidbody2d.addForce(
-                    )
+                rb2d.velocity = Vector2.zero;
+                rb2d.AddForce(new Vector2(0, upForce));
+                anim.SetTrigger("BirdFlap")
             }
         }
+    }
+    void OnCollisionEnter2D ()
+    {
+        isDead = true;
     }
 }
