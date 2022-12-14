@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
         }
         else if (instance != this)
         {
-            Destroy(gameObject);
+            Destroy (gameObject);
         }
     }
 
@@ -39,12 +39,12 @@ public class GameController : MonoBehaviour
     
     public void BirdScored()
     {
-        if (gameOver)
+      if (gameOver)
         {
             return;
         }
         score++;
-        scoreText.text = "Score:" + score.ToSring();
+        scoreText.text = "Score " + score.ToString();
     }
 
     public void BirdDied()
