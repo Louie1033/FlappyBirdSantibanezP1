@@ -7,15 +7,18 @@ public class BirdController : MonoBehaviour
 
     public float upForce = 200f;
     private bool isDead = false;
+    
     private Rigidbody2D rb2d;
-
     private Animator anim;
+    AudioSource audioSource;
+    
    
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,7 +26,7 @@ public class BirdController : MonoBehaviour
     {
         if (isDead == false)
         {
-            if (Input.GetMouseButtonDown (0))
+            if (Input.GetKeyDown (KeyCode.Space))
             {
                 rb2d.velocity = Vector2.zero;
                 rb2d.AddForce(new Vector2(0, upForce));
@@ -37,5 +40,9 @@ public class BirdController : MonoBehaviour
         isDead = true;
         anim.SetTrigger("Die");
         GameController.instance.BirdDied();
+    }
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }
