@@ -11,5 +11,6 @@ public class Column : MonoBehaviour
         {
             GameController.instance.BirdScored();
         }
+
     }
 }

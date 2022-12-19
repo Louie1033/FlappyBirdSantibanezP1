@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8dd799d06f6481489de00038182b0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreClip: {fileID: 8300000, guid: 14b264cd284cd1948a9b5f79dc2ee668, type: 3}
 --- !u!114 &-4570611804950579164
 MonoBehaviour:
   m_ObjectHideFlags: 0

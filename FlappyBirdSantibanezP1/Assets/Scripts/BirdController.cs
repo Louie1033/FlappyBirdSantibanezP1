@@ -6,10 +6,13 @@ public class BirdController : MonoBehaviour
 {
 
     public float upForce = 200f;
-    private bool isDead = false;
+    public AudioClip deathSound;
+    public AudioClip scoreSound;
     
+    private bool isDead = false;
     private Rigidbody2D rb2d;
     private Animator anim;
+
     AudioSource audioSource;
     
    
@@ -36,13 +39,14 @@ public class BirdController : MonoBehaviour
     }
     void OnCollisionEnter2D ()
     {
+        audioSource.PlayOneShot(deathSound);
         rb2d.velocity = Vector2.zero;
         isDead = true;
         anim.SetTrigger("Die");
         GameController.instance.BirdDied();
     }
-    public void PlaySound(AudioClip clip)
+    void OnTriggerEnter2D ()
     {
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(scoreSound);    
     }
 }

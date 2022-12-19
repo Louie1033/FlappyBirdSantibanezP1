@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public GameObject gameOverText;
     public Text scoreText;
+    public Text highScore;
     public bool gameOver = false;
     public float scrollSpeed = -1.5f;
 
@@ -51,5 +52,7 @@ public class GameController : MonoBehaviour
     {
         gameOverText.SetActive(true);
         gameOver = true;
+        highScore.text = " HighScore: " + PlayerPrefs.GetInt("HighScore");
+        PlayerPrefs.SetInt("HighScore", score);
     }
 }
