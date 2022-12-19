@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     public bool gameOver = false;
     public float scrollSpeed = -1.5f;
 
-    private int score = 0;
+    public int score = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -46,6 +46,7 @@ public class GameController : MonoBehaviour
         }
         score++;
         scoreText.text = "Score " + score.ToString();
+        PlayerPrefs.SetInt("HighScore", score);
     }
 
     public void BirdDied()
@@ -53,6 +54,6 @@ public class GameController : MonoBehaviour
         gameOverText.SetActive(true);
         gameOver = true;
         highScore.text = " HighScore: " + PlayerPrefs.GetInt("HighScore");
-        PlayerPrefs.SetInt("HighScore", score);
+        
     }
 }

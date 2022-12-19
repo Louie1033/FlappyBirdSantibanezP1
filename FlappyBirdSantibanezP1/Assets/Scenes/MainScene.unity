@@ -366,7 +366,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c0cca2d2839de24439b21d112d28467d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1563,6 +1563,7 @@ MonoBehaviour:
   highScore: {fileID: 936140773}
   gameOver: 0
   scrollSpeed: -1.5
+  score: 0
 --- !u!4 &1776053837
 Transform:
   m_ObjectHideFlags: 0

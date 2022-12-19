@@ -57,6 +57,7 @@ public class BirdController : MonoBehaviour
     }
     void OnTriggerEnter2D ()
     {
+        if(isDead == false)
         audioSource.PlayOneShot(scoreSound);    
     }
 }
