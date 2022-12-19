@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upForce: 200
-  deathSound: {fileID: 8300000, guid: 14b264cd284cd1948a9b5f79dc2ee668, type: 3}
+  deathSound: {fileID: 8300000, guid: ecd6a9bd4ebc9904b81a267a74e32303, type: 3}
   scoreSound: {fileID: 8300000, guid: 14b264cd284cd1948a9b5f79dc2ee668, type: 3}
 --- !u!95 &548453577
 Animator:
