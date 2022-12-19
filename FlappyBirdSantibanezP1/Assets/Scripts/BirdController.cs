@@ -8,6 +8,8 @@ public class BirdController : MonoBehaviour
     public float upForce = 200f;
     public AudioClip deathSound;
     public AudioClip scoreSound;
+    public AudioClip flapSound;
+    public bool alreadyPlayed = false;
     
     private bool isDead = false;
     private Rigidbody2D rb2d;
@@ -34,16 +36,24 @@ public class BirdController : MonoBehaviour
                 rb2d.velocity = Vector2.zero;
                 rb2d.AddForce(new Vector2(0, upForce));
                 anim.SetTrigger("Flap");
+                audioSource.PlayOneShot(flapSound);
             }
         }
     }
     void OnCollisionEnter2D ()
     {
-        audioSource.PlayOneShot(deathSound);
         rb2d.velocity = Vector2.zero;
         isDead = true;
         anim.SetTrigger("Die");
         GameController.instance.BirdDied();
+        
+        if (!alreadyPlayed)
+        {
+            audioSource.PlayOneShot(deathSound, 15);
+            alreadyPlayed = true;
+        }
+    
+        
     }
     void OnTriggerEnter2D ()
     {

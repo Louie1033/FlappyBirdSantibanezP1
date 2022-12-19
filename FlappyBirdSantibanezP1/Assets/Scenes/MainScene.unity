@@ -366,7 +366,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c0cca2d2839de24439b21d112d28467d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.35
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -846,8 +846,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upForce: 200
-  deathSound: {fileID: 8300000, guid: ecd6a9bd4ebc9904b81a267a74e32303, type: 3}
+  deathSound: {fileID: 8300000, guid: dd86ce6faddb2904296ff50ec9cd47a8, type: 3}
   scoreSound: {fileID: 8300000, guid: 14b264cd284cd1948a9b5f79dc2ee668, type: 3}
+  flapSound: {fileID: 8300000, guid: 219ecee94ab2f614991270ef97bdd1ac, type: 3}
 --- !u!95 &548453577
 Animator:
   serializedVersion: 4
@@ -886,7 +887,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 90
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
